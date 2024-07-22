@@ -15,15 +15,32 @@
 <body>
 <header>
     <img class="head_aicon" src="aicon.png">
-    <ul>
-        <li><a href="#AI">AI</a></li>
-        <li><a href="#Maya">Maya</a></li>
-        <li><a href="#Dessin">Dessin</a></li>
-    </ul>
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    <label for="menu-toggle" class="menu">
+        <span class="hamburger"></span>
+        <div class="menu">
+            <strong>MENU</strong>
+        </div>
+        <div class="square-menu"></div>
+    </label>
+    <div class="menu-content">
+        <nav class="m">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#AI">AI</a></li>
+                <li><a href="#Maya">Maya</a></li>
+                <li><a href="#Dessin">Dessin</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <section id="home" class="home">
-    <img class="aicon" src="aicon.png">
-    <p>将来を豊かにする努力を</p>
+    <div class="aicon_position">
+        <div class="aicon_back">
+            <img class="aicon" src="aicon.png">
+            <p>将来を豊かにする努力を</p>
+        </div>
+    </div>
     <video src="home_back.mov" autoplay loop muted playsinline></video>
 </section>
 <section id="AI" class="AI">
