@@ -21,13 +21,14 @@ header {
 header img.head_aicon {
     height: 40px;
 }
+
 header ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
-/* チェックボックスを隠す */
+
 .hidden {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -35,8 +36,9 @@ header ul li a {
     width: 1px;
     height: 1px;
     overflow: hidden;
-  }
-@media (min-width:769px){
+}
+
+@media (min-width:769px) {
     header ul {
         list-style: none;
         margin: 0;
@@ -56,7 +58,8 @@ header ul li a {
     header ul li a:hover {
         color: #ff9800;
     }
-    .menu{
+
+    .menu {
         position: absolute;
         clip: rect(0 0 0 0);
         clip-path: inset(50%);
@@ -65,17 +68,19 @@ header ul li a {
         overflow: hidden;
     }
 }
+
 @media (max-width: 769px) {
-    header{
+    header {
         background-color: transparent;
     }
-    
+
     .menu {
         top: 20px;
         right: 0;
         cursor: pointer;
-      }
-      strong{
+    }
+
+    strong {
         position: fixed;
         color: #FFFFFF;
         top: 55px;
@@ -84,8 +89,9 @@ header ul li a {
         height: 12px;
         z-index: 1001;
         font: normal normal bold 12px/1px BIZ UDPGothic;
-      }
-      .square-menu{
+    }
+
+    .square-menu {
         position: fixed;
         top: 8px;
         right: 0px;
@@ -94,21 +100,22 @@ header ul li a {
         border-radius: 12px 0px 0px 12px;
         background: #1030ff;
         z-index: 999;
-      }
-      .hamburger {
+    }
+
+    .hamburger {
         display: block;
         top: 30px;
-        right:10px;
+        right: 10px;
         width: 45px;
         height: 5px;
         background-color: #FFFFFF;
         position: fixed;
         transition: background-color 0.3s ease;
         z-index: 1000;
-      }
-      
-      .hamburger:before,
-      .hamburger:after {
+    }
+
+    .hamburger:before,
+    .hamburger:after {
         content: '';
         display: block;
         width: 100%;
@@ -116,31 +123,29 @@ header ul li a {
         background-color: #FFFFFF;
         position: absolute;
         transition: transform 0.3s ease;
-      }
-      
-      .hamburger:before {
+    }
+
+    .hamburger:before {
         top: -10px;
-      }
-      
-      .hamburger:after {
+    }
+
+    .hamburger:after {
         bottom: -10px;
-      }
-      
-      /* メニューの開閉時のスタイル */
-      #menu-toggle:checked + .menu .hamburger {
+    }
+
+    #menu-toggle:checked + .menu .hamburger {
         background-color: transparent;
-      }
-      
-      #menu-toggle:checked + .menu .hamburger:before {
+    }
+
+    #menu-toggle:checked + .menu .hamburger:before {
         transform: translateY(10px) rotate(45deg);
-      }
-      
-      #menu-toggle:checked + .menu .hamburger:after {
+    }
+
+    #menu-toggle:checked + .menu .hamburger:after {
         transform: translateY(-10px) rotate(-45deg);
-      }
-      
-      /* メニューのコンテンツ */
-      .menu-content {
+    }
+
+    .menu-content {
         position: fixed;
         z-index: 998;
         top: 0;
@@ -151,40 +156,45 @@ header ul li a {
         transition: right 0.3s ease;
         overflow-y: auto;
         box-sizing: border-box;
-      }
-    
-      input[type="checkbox"]:checked ~ .menu-content {
+    }
+
+    input[type="checkbox"]:checked ~ .menu-content {
         right: 0;
-      }
-      
-      .menu-content nav {
+    }
+
+    .menu-content nav {
         position: absolute;
         top: 50%;
         right: 50%;
         transform: translate(50%, -50%);
-      }
-      
-      .menu-content ul {
+    }
+
+    .menu-content ul {
         list-style-type: none;
         padding: 0;
         text-align: center;
         color: #FFFFFF;
-      }
-      
-      .menu-content ul li {
+    }
+
+    .menu-content ul li {
         margin-bottom: 20px;
-      }
-      
-      .menu-content ul li a {
+    }
+
+    .menu-content ul li a {
         color: #FFFFFF;
         font-size: 20px;
-      }
-    
+    }
 }
 
 section {
     padding: 60px 20px;
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.section.fade-in {
+    opacity: 1;
 }
 
 .home {
@@ -209,12 +219,14 @@ section {
 .home img.aicon {
     position: relative;
     width: 50vw;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .home p {
     padding-top: 20px;
     font-size: 30px;
     font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .aicon_position {
@@ -231,12 +243,22 @@ section {
     justify-content: center;
     text-align: center;
 }
-.AI{
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.AI {
     display: block;
     width: 100%;
-    height: 100vh;
 }
-.AI h1{
+
+.AI h1 {
     display: inline-block;
     background-color: #333;
     color: #FFFFFF;
@@ -244,7 +266,8 @@ section {
     font-size: 28px;
     margin-bottom: 40px;
 }
-.box{
+
+.box {
     position: absolute;
     display: block;
     width: 80%;
@@ -252,6 +275,7 @@ section {
     background-color: #333;
     z-index: -3;
 }
+
 footer {
     background: #333;
     color: white;
@@ -280,4 +304,41 @@ footer ul li a {
 
 footer ul li a:hover {
     color: #ff9800;
+}
+
+.Maya h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.Maya video {
+    width: 100%;
+}
+
+#about h1 {
+    display: inline-block;
+    background-color: #333;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+#about img {
+    width: 50%;
+}
+
+.h1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.seiton {
 }

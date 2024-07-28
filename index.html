@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>portfolio-site</title>
+<title>Portfolio Site</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" type="text/css" href="slick_slade.css">
 <link rel="stylesheet" href="slick.css">
@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <img class="head_aicon" src="aicon.png">
+    <img class="head_aicon" src="aicon.png" alt="Icon">
     <input type="checkbox" id="menu-toggle" class="hidden">
     <label for="menu-toggle" class="menu">
         <span class="hamburger"></span>
@@ -35,50 +35,53 @@
         </nav>
     </div>
 </header>
-<section id="home" class="home">
+<section id="home" class="home section">
     <div class="aicon_position">
         <div class="aicon_back">
-            <img class="aicon" src="aicon.png">
+            <img class="aicon" src="aicon.png" alt="Icon">
             <p>将来を豊かにする努力を</p>
         </div>
     </div>
     <video src="home_back.mov" autoplay loop muted playsinline></video>
 </section>
-<section id="AI" class="AI">
+<section id="AI" class="AI section">
     <h1>Illustrator</h1>
     <div class="sli-design">
         <ul class="slider">
-            <li><img src="animal.png"></li>
-            <li><img src="genpoukonsyoku.png"></li>
-            <li><img src="kahoukonsyoku.png"></li>
-            <li><img src="kyaracter.png"></li>
+            <li><img src="animal.png" alt="Animal"></li>
+            <li><img src="kyaracter.png" alt="Character"></li>
+            <li><img src="kahoukonsyoku.png" alt="kahou"></li>
+            <li><img src="genpoukonsyoku.png" alt="genpoukonsyoku"></li>
         </ul>
     </div>
     <p>
-        ポスター資料では、シンプルなデザインを心がけ、
-
+        ポスター資料では、シンプルなデザインを心がけ、余白を意識し見やすいシンプルなデザインにしました。
+        キャラクター作成では、印象に残るデザインになるようインパクトを与えるよう制作しました。
     </p>
 </section>
-<section id="Maya" class="Maya">
+<section id="Maya" class="Maya section">
     <h1>Maya</h1>
-    <ul class="slider">
-        <li><video src="lobo.mov" autoplay loop muted playsinline></li>
-        <li><img src="kan.png" alt=""></li>
-        <li><img src="chest.png" alt=""></li>
-    </ul>
-    <p></p>
-</section>
-<section id="about">
-    <h1>ABOUT</h1>
-    <img src="aicon.png">
+    <li><video src="lobo.mov" autoplay loop muted playsinline></li>
     <p>
-        自分の将来を考え、どんな能力を身につけるべきかを考えながら<br>
-        行動しています。<br>
-        特に、自分が得意とするところではないところで、能力を発揮で<br>
-        きるかを重要視しています。<br>
-        趣味はスポーツ観戦、ライブ、映画鑑賞、温泉巡りと幅広くなん<br>
-        でも好きです。
+        クレヨンしんちゃんに出てくるカンタムロボをイメージして作りました。
+        テクスチャの質感やロボらしい動き方をつけることを意識しました。
     </p>
+</section>
+<section id="about" class="section">
+    <div class="seiton">
+        <div class="h1">
+        <h1>ABOUT</h1>
+        </div>
+        <img src="aicon.png" alt="Icon">
+        <p>
+            自分の将来を考え、どんな能力を身につけるべきかを考えながら
+            行動しています。
+            特に、自分が得意とするところではないところで、能力を発揮で
+            きるかを重要視しています。
+            趣味はスポーツ観戦、ライブ、映画鑑賞、温泉巡りと幅広くなん
+            でも好きです。
+        </p>
+    </div>
 </section>
 <footer>
     <ul class="my-social">
@@ -91,5 +94,27 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="slade.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.section');
+
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
