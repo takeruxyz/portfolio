@@ -40,7 +40,9 @@ header ul li a {
     height: 1px;
     overflow: hidden;
 }
-
+p{
+    padding: 30px;
+}
 @media (min-width:769px) {
     header ul {
         list-style: none;
@@ -70,6 +72,16 @@ header ul li a {
         height: 1px;
         overflow: hidden;
     }
+    p{
+        max-width: 60%;
+    }
+    .position-p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
 @media (max-width: 769px) {
@@ -317,7 +329,7 @@ footer ul li a:hover {
     font-size: 28px;
     margin-bottom: 40px;
 }
-.Maya-p{
+.Maya p{
     margin-top: 5vh;
     display: block;
     background-color: #FFFFFF;
@@ -345,11 +357,10 @@ footer ul li a:hover {
     background-color: #FFFFFF;
     font-size: 24px;
 }
-.square-p{
+.AI p{
     display: block;
     background-color: #FFFFFF;
     font-size: 24px;
-
 }
 .h1 {
     display: flex;
